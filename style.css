@@ -1,0 +1,285 @@
+:root {
+  /* ### Primary */
+
+  --summaryReaction: hsl(0, 100%, 67%);
+  --summaryMemory: hsl(39, 100%, 56%);
+  --summaryVerbal: hsl(166, 100%, 37%);
+  --summaryVisual: hsl(234, 85%, 45%);
+  --summaryReactionBackground: hsla(0, 100%, 67%, 0.1);
+  --summaryMemoryBackground:hsla(39, 100%, 56%, 0.1);
+  --summaryVerbalBackground:hsla(166, 100%, 37%, 0.1);
+  --summaryVisualBackground:hsla(234, 85%, 45%, 0.1);
+
+  /* ## Gradients */
+
+  --gradientPrimaryTop: hsl(252, 100%, 67%);
+  --gradientPrimaryBottom: hsl(241, 81%, 54%);
+
+  --gradientPrimary: linear-gradient(hsl(252, 100%, 67%), hsl(241, 81%, 54%));
+  --gradientSecondary: linear-gradient(hsla(256, 72%, 46%, 1), hsla(241, 72%, 46%, 0));
+  --gradientButton: linear-gradient(hsl(224, 30%, 27%), hsl(224, 30%, 27%));
+
+  /* ### Neutral */
+
+  --color200: hsl(0, 0%, 100%);
+  --color400: hsl(221, 100%, 96%);
+  --color600: hsl(241, 100%, 89%);
+  --color800: hsl(224, 30%, 27%);
+}
+
+@property --buttonColor1 {
+  syntax: '<color>';
+  initial-value: hsl(224, 30%, 27%);
+  inherits: false;
+}
+
+@property --buttonColor2 {
+  syntax: '<color>';
+  initial-value: hsl(224, 30%, 27%);
+  inherits: false;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 1rem;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ol,
+ul {
+  margin: 0;
+  padding: 0;
+  font-weight: normal;
+  font-size: 1.125rem;
+
+  font-family: 'Hanken Grotesk', sans-serif;
+
+  color: var(--color600);
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.mainContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.resultsHeader {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  background: var(--gradientPrimary);
+
+  padding: 1.875rem 3.125rem;
+
+  border-radius: 0 0 3.125rem 3.125rem;
+}
+
+.resultTotal {
+  background: var(--gradientSecondary);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  padding: 1.25rem;
+  border-radius: 4.375rem;
+  width: 8.75rem;
+
+  margin: 1.875rem;
+}
+
+.resultTotalNumber {
+  font-size: 3.5625rem;
+  font-weight: 800;
+
+  color: var(--color200);
+}
+
+.resultTotalOutOf {
+  color: var(--color600);
+}
+
+.resultText {
+  color: var(--color200);
+  font-weight: 600;
+  font-size: 2rem;
+}
+
+.resultDescription {
+  font-weight: 200;
+  font-size: 1rem;
+
+  margin: 1.25rem;
+}
+
+.summary {
+  margin: 1.875rem;
+}
+
+.summary h2 {
+  font-size: 1.125rem;
+  color: var(--color800);
+}
+
+.summaryResults {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin: 1.25rem 0 2.5rem 0;
+}
+
+.oneSummaryResultGroup {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 0 1.25rem;
+}
+
+.oneSummaryLabel {
+  display: flex;
+  flex-direction: row;
+  gap: 0.8125rem;
+}
+
+.oneSummaryLabel img {
+  height: 1.25rem;
+}
+
+.oneSummaryResult {
+  display: flex;
+  flex-direction: row;
+  gap: 0.3125rem;
+}
+
+.oneSummaryResultGroup {
+  height: 3.5rem;
+  border-radius: 0.625rem;
+
+  display: flex;
+  align-items: center;
+}
+
+.oneSummaryScore {
+  color: var(--color800);
+  
+}
+
+.oneSummary100 {
+  color: var(--color600);
+}
+
+#reaction {
+  color: var(--summaryReaction);
+  background-color: var(--summaryReactionBackground);
+
+}
+
+#memory {
+  color: var(--summaryMemory);
+  background-color: var(--summaryMemoryBackground);
+}
+
+#verbal {
+  color: var(--summaryVerbal);
+  background-color: var(--summaryVerbalBackground);
+}
+
+#visual {
+  color: var(--summaryVisual);
+  background-color: var(--summaryVisualBackground);
+}
+
+.footerButton {
+  background: linear-gradient(var(--buttonColor1), var(--buttonColor2));
+  color: var(--color200);
+  height: 3.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 1.75rem;
+  transition: --buttonColor1 1s, --buttonColor2 1s;
+}
+
+.footerButton:hover {
+  --buttonColor1: var(--gradientPrimaryTop);
+  --buttonColor2: var(--gradientPrimaryBottom);
+}
+
+@media screen and (min-width: 46.875rem) {
+
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  .mainContainer {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .resultsHeader {
+    width: 23.125rem;
+    border-radius: 3.125rem;
+    padding: 2.8125rem 3.125rem;
+  }
+
+  .resultTotal {
+    margin: 2.625rem;
+    width: 12.5rem;
+    height: 12.5rem;
+    border-radius: 6.25rem;
+    display: flex;
+    justify-content: center;
+  }
+
+  .resultTotalNumber {
+    font-size: 75;
+  }
+
+  .resultDescription {
+    text-align: center;
+  }
+
+  .summary padding {
+    width: 23.125rem;
+  }
+
+  .oneSummaryResultGroup {
+    width: 18rem;
+    height: 3.4375rem;
+  }
+
+
+}
+
+@-moz-document url-prefix() {
+  .footerButton {
+    background-color: var(--color800);
+  }
+}
