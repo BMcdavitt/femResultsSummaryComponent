@@ -80,9 +80,13 @@ img {
   height: auto;
 }
 
-.mainContainer {
+.resultContainer {
   display: flex;
   flex-direction: column;
+}
+
+.mainContainer:active {
+  box-shadow: 5px 5px 15px 5px #000000;
 }
 
 .resultsHeader {
@@ -238,9 +242,15 @@ img {
     width: 100vw;
     height: 100vh;
     display: flex;
-    flex-direction: row;
     justify-content: center;
     align-items: center;
+  }
+
+  .resultContainer {
+    display: flex;
+    flex-direction: row;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+    border-radius: 3.125rem;
   }
 
   .resultsHeader {
